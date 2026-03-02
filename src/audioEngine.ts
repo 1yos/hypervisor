@@ -27,6 +27,12 @@ class AudioEngine {
       case 'delay':
         node = new Tone.FeedbackDelay(data.delayTime || '8n', data.feedback || 0.5);
         break;
+      case 'reverb':
+        node = new Tone.Reverb(data.decay || 2);
+        break;
+      case 'neuralSaturator':
+        node = new Tone.Distortion(data.distortion || 0.4);
+        break;
       case 'output':
         // Output is special, we don't create a new Tone node for it, 
         // we use the master destination. But we need a Gain node as a proxy.

@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
@@ -10,28 +10,67 @@ html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: #0A0A0B;
+  background: #050508;
+  color: #E2E8F0;
+  overflow: hidden;
+}
+
+/* Twilight Background Glows */
+.twilight-bg {
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(30, 64, 175, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(126, 34, 206, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(13, 148, 136, 0.1) 0%, transparent 60%),
+    #050508;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+/* Premium Metallic Frame */
+.metallic-frame {
+  background: linear-gradient(145deg, #1e1e24, #141418);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 
+    inset 1px 1px 0px rgba(255, 255, 255, 0.05),
+    4px 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Glass Front Effect */
+.glass-front {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.02);
 }
 
 /* React Flow Overrides */
 .react-flow__handle {
-  width: 10px !important;
-  height: 10px !important;
-  background: #00FF00 !important;
-  border: 2px solid #151619 !important;
+  width: 12px !important;
+  height: 12px !important;
+  background: #38BDF8 !important; /* Sapphire */
+  border: 2px solid #0F172A !important;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
 }
 
 .react-flow__edge-path {
-  stroke-width: 2;
+  stroke-width: 3;
+  filter: drop-shadow(0 0 4px rgba(56, 189, 248, 0.3));
 }
 
 .react-flow__controls-button {
-  background: #151619 !important;
-  border-bottom: 1px solid #333 !important;
-  fill: #8E9299 !important;
+  background: rgba(30, 41, 59, 0.8) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  fill: #94A3B8 !important;
+  border-radius: 4px !important;
+  margin-bottom: 4px !important;
 }
 
 .react-flow__controls-button:hover {
-  background: #1A1A1C !important;
-  fill: #00FF00 !important;
+  background: rgba(56, 189, 248, 0.2) !important;
+  fill: #38BDF8 !important;
+}
+
+.react-flow__attribution {
+  display: none !important;
 }
