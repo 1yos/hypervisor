@@ -1,0 +1,5 @@
+{
+  "name": "DSP Hypervisor",
+  "description": "A modular DSP visual engine for real-time signal processing and node-based audio synthesis.",
+  "requestFramePermissions": []
+}
